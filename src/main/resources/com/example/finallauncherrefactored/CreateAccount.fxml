@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finallauncherrefactored.CreateAccountController">
+   <children>
+      <Label layoutX="25.0" layoutY="28.0" text="Final Launcher: Account Creation">
+         <font>
+            <Font name="DIN Condensed Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="137.0" prefHeight="19.0" prefWidth="258.0" text="Enter your new Username and Password!">
+         <font>
+            <Font name="Apple SD Gothic Neo Regular" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tField_Username" layoutX="54.0" layoutY="167.0" promptText="Enter new Username!" />
+      <Label layoutX="401.0" layoutY="140.0" prefHeight="201.0" prefWidth="173.0" text="Security Note:&#10;&#10;All entered user data is encrypted when stored on this computer.&#10;&#10;This data cannot be accessed by other users, applications, or developers once created." textFill="RED" wrapText="true" />
+      <Button fx:id="btn_Confirm" layoutX="214.0" layoutY="269.0" mnemonicParsing="false" onAction="#btn_OnConfirm" text="Confirm" />
+      <Button fx:id="btn_GoBack" layoutX="312.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn_OnGoBack" text="Go Back" />
+      <PasswordField fx:id="pField_Password" layoutX="54.0" layoutY="216.0" promptText="Enter new Password!" />
+      <Label fx:id="label_Error" layoutX="227.0" layoutY="172.0" prefHeight="53.0" prefWidth="160.0" textFill="RED" wrapText="true" />
+   </children>
+</AnchorPane>
