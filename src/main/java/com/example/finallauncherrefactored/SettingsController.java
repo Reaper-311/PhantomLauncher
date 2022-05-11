@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -18,6 +17,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -228,24 +229,13 @@ public class SettingsController {
                     e.printStackTrace();
                 }
 
-                File currentphoto = new File(System.getProperty("user.dir") + "CurrentPicture.png");
-                if (currentphoto.exists()) {
-                    currentphoto.delete();
-                    File newphoto = new File(System.getProperty("user.dir") + "CurrentPicture.png");
-                    try {
-                        Files.copy(currentphoto.toPath(), newphoto.toPath());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    File newphoto = new File(System.getProperty("user.dir") + "CurrentPicture.png");
-                    try {
-                        Files.copy(currentphoto.toPath(), newphoto.toPath());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+                File currentphoto = new File(getClass().getResource("CurrentPicture.png").getPath());
 
+                try {
+                    Files.copy(list.toPath(), currentphoto.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

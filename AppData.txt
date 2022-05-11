@@ -1,1 +1,2 @@
 StaySignedIn:false
+name:test

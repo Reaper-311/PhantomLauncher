@@ -73,6 +73,7 @@ public class SignInController {
     void onBtnConfirm(ActionEvent event) {
         if (main.credentialHandshake(tField_Username.getText(), pField_Password.getText())) {
             try {
+                Main.updatePFP();
                 main.updateAppDataName(tField_Username.getText());
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
                 Scene scene = new Scene(root);

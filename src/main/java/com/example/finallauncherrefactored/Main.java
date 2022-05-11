@@ -1,10 +1,7 @@
 package com.example.finallauncherrefactored;
 
-import com.example.finallauncherrefactored.Utils.ImagePool;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -13,7 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.security.MessageDigest;
@@ -66,9 +62,22 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Public static method that updates the MainMenu's PFP to the currently signing in user.
+     */
+    public static void updatePFP() {
+
+    }
+
+    /**
+     * Method for the Main class that resets the "CurrentPicture.png" image to the "DefaultPFP.png"
+     * Resetting this is necessary for how FXML files are loaded - the FXML node is set to a specific path, so modifying
+     * the "CurrentPicture.png" is how to show custom Profile Pictures.
+     * Returns nothing.
+     */
     public void resetPFP() {
-        File currentpicture = new File(String.valueOf(getClass().getResource("CurrentPicture.png")));
-        File defaultpicture = new File(String.valueOf(getClass().getResource("DefaultPFP.png")));
+        File currentpicture = new File(getClass().getResource("CurrentPicture.png").getPath());
+        File defaultpicture = new File(getClass().getResource("DefaultPFP.png").getPath());
         if (currentpicture.exists()) {
             currentpicture.delete();
         }
