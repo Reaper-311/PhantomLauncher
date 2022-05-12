@@ -66,6 +66,9 @@ public class FancyBlackJackApp {
                 window.setScene(scene2);
                 window.setOnCloseRequest(e -> {
                     Main.resetAppData();
+                    sound.dealCard.stop();
+                    sound.flipCard.stop();
+                    sound.bridgeCards.stop();
                     window.close();
                 });
                 window.show();
