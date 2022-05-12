@@ -8,9 +8,6 @@ import java.io.FileNotFoundException;
 import java.util.Objects;
 
 public class Card {
-    final String filepath = "/Users/goldengabe/intelliJ-workspace/BlackJack/src/main/resources/com/example/blackjack/Images/";
-
-
     static String[] suits = {"♢" , "♡", "♣", "♠"};
     static String[] values = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     String suit;
@@ -22,22 +19,16 @@ public class Card {
         this.value = value;
         image = null;
     }
-    Card(String suit, String value, boolean inHand) throws FileNotFoundException{
+    Card(String suit, String value, boolean inHand){
         this.suit = suit;
         this.value = value;
         if(inHand) {
             image = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("Images/" + suit + "/" + suit + value + ".png")));
         }
     }
-
-    String getTotalName() {
-        return this.suit + this.value;
-    }
-
     void printCard(Card inputCard) {
         System.out.println(inputCard.suit + inputCard.value);
     }
-
     int getValue() {
         if (value.equals("A")) {
             return 69;
@@ -68,8 +59,5 @@ public class Card {
         } else {
             throw new IllegalArgumentException("Error Occurred in Card Value check method in Card class. Card inputted resulted in invalid parameters.");
         }
-    }
-    public String getSuit() {
-        return this.suit;
     }
 }

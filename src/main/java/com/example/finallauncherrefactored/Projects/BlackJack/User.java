@@ -20,7 +20,6 @@ public class User {
         }
         return acesInHand;
     }
-    //TODO: Fix the damn aces
     int getHandValue(){
         int handValue = 0;
         int acesInHand = getNumberOfAces();

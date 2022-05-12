@@ -15,7 +15,7 @@ public class Deck {
 
     Image cardBackImage;
     Deck() throws FileNotFoundException { this.cards = createDeck(); }
-    ArrayList<Card> createDeck() throws FileNotFoundException {
+    ArrayList<Card> createDeck(){
         cardBackImage = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("Images/CardBack.png")));
         for(String suit : Card.suits)
         {
@@ -27,21 +27,11 @@ public class Deck {
         return cards;
     }
 
-    Card pullRandomCard() throws FileNotFoundException {
+    Card pullRandomCard(){
         Random r = new Random();
         int cardNumber = r.nextInt(cards.size());
         Card pulledCard = new Card(cards.get(cardNumber).suit, cards.get(cardNumber).value, true);
         cards.remove(cardNumber);
         return pulledCard;
-    }
-
-    void printCard(Card c) {
-        System.out.println(c.suit + c.value);
-    }
-
-    void printDeck() {
-        for (Card c : cards) {
-            System.out.println(c.suit + c.value);
-        }
     }
 }

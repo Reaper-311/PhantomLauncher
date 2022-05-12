@@ -1,5 +1,4 @@
 package com.example.finallauncherrefactored.Projects.BlackJack;
-
 import java.io.FileNotFoundException;
 public class BlackJackGame  {
     Dealer dealer;
@@ -56,15 +55,6 @@ public class BlackJackGame  {
             dealerHandShown = true;
             isOver = true;
         }
-        /**
-         * else if(currentDealerHandValue == 21){
-         *             winner = Winner.DEALER;
-         *             winCondition = -10;
-         *             user.money = user.money - 10;
-         *             isOver = true;
-         *         }
-         */
-
     }
     void userHit() throws FileNotFoundException {
         user.hand.add(deck.pullRandomCard());

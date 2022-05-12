@@ -5,12 +5,6 @@ import java.util.ArrayList;
 public class Dealer {
     static ArrayList<Card> hand = new ArrayList<Card>();
     Dealer() {}
-
-    void devPrintHand() {
-        for (Card c : hand) {
-            c.printCard(c);
-        }
-    }
     int getNumberOfAces(){
         int acesInHand = 0;
         for(Card c : hand){
@@ -20,7 +14,6 @@ public class Dealer {
         }
         return acesInHand;
     }
-
     int getHandValue() {
         int handValue = 0;
         int acesInHand = getNumberOfAces();
@@ -75,7 +68,6 @@ public class Dealer {
         return  handValue;
     }
     int getStartingHandValue(){
-        int handValue = 0;
         if(hand.get(1).getValue() == 69){
             return 11;
         }else{

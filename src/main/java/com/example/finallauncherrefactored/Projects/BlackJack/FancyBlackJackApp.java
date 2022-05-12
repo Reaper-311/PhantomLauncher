@@ -4,7 +4,6 @@ import com.example.finallauncherrefactored.Main;
 import javafx.animation.PathTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -30,8 +29,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class FancyBlackJackApp {
-    //TODO:Flip the dealers card after a hit or stand on the users first turn, then continue with procedure
-    //TODO: make it so that the cards overlay a bit
     Group root = new Group();
     BlackJackGame game = new BlackJackGame();
     BlackJackSoundEffects sound = new BlackJackSoundEffects();
@@ -85,7 +82,6 @@ public class FancyBlackJackApp {
         game.restartGame();
         game.dealCards();
         SequentialTransition animationInitialDeal = animationInitialDeal();
-        //shuffleDeckAnimation();
         createDeckNode();
         SequentialTransition start = new SequentialTransition(animationInitialDeal);
         start.setCycleCount(1);
@@ -181,7 +177,7 @@ public class FancyBlackJackApp {
             ImageView tempIV = new ImageView(game.dealer.hand.get(1).image);
             tempIV.setFitWidth(150);
             tempIV.setFitHeight(210);
-            tempIV.setX(xPos + xPos);
+            tempIV.setX(xPos + additionInt);
             tempIV.setY(175-105);
             dealerCardNodes.add(tempIV);
             root.getChildren().add(dealerCardNodes.get(dealerCardNodes.size()-1));
@@ -276,8 +272,8 @@ public class FancyBlackJackApp {
         downCard.setX(25);
         downCard.setY(250);
         root.getChildren().add(downCard);
-        int xPos = 200 * game.user.hand.size() - 1;
-        Line line = new Line(downCard.getX() + 75,downCard.getY() + 105,xPos + 75, 455);
+        int xPos =200 +( 100 *game.user.hand.size() - 1);
+        Line line = new Line(downCard.getX() + 75,downCard.getY() + 105,xPos - 25, 455);
         PathTransition pt = new PathTransition();
         pt.setNode(downCard);
         pt.setDuration(Duration.seconds(.682));
@@ -291,8 +287,8 @@ public class FancyBlackJackApp {
         downCard.setX(25);
         downCard.setY(250);
         root.getChildren().add(downCard);
-        int xPos = 200 * game.dealer.hand.size() - 1;
-        Line line = new Line(downCard.getX() + 75,downCard.getY() + 105,xPos + 75, 175);
+        int xPos =200 +( 100 *game.dealer.hand.size() - 1);
+        Line line = new Line(downCard.getX() + 75,downCard.getY() + 105,xPos - 25, 175);
         PathTransition pt = new PathTransition();
         pt.setNode(downCard);
         pt.setDuration(Duration.seconds(.682));
@@ -300,6 +296,10 @@ public class FancyBlackJackApp {
         return pt;
     }
     void hit(){
+        if(!game.dealerHandShown){
+            game.updateDealerHand();
+            flipCards();
+        }
         int temp = game.dealer.hand.size();
         SequentialTransition hits;
         try{
@@ -322,6 +322,10 @@ public class FancyBlackJackApp {
         }
     }
     void stand(){
+        if(!game.dealerHandShown){
+            game.updateDealerHand();
+            flipCards();
+        }
         int temp = game.dealer.hand.size();
         if(!game.dealerHandShown){
             flipDealerCards();
@@ -334,9 +338,16 @@ public class FancyBlackJackApp {
                 sound.dealCard.play();
                 dealerHit.play();
                 dealerHit.setOnFinished(actionEvent -> flipCards());
+                if(game.isOver){
+                    gameOver();
+                }else{
+                    stand();
+                }
             }else{
                 if(game.isOver){
                     gameOver();
+                }else{
+                    stand();
                 }
             }
         } catch (FileNotFoundException e) {
@@ -393,6 +404,7 @@ public class FancyBlackJackApp {
     SequentialTransition gameOverAnimation(){
         removeObjectNodes();
         int xPos = 200;
+        int additionInt = 100;
         ImageView[] userCardBackNodes = new ImageView[game.user.hand.size()];
         for(int i = 0; i < game.user.hand.size();i++){
             ImageView tempIV = new ImageView(game.deck.cardBackImage);
@@ -402,7 +414,7 @@ public class FancyBlackJackApp {
             tempIV.setY(455 - 105);
             userCardBackNodes[i] = tempIV;
             root.getChildren().add(userCardBackNodes[i]);
-            xPos+=200;
+            xPos+=additionInt;
         }
         xPos = 200;
         ImageView[] dealerCardBackNodes = new ImageView[game.dealer.hand.size()];
@@ -414,7 +426,7 @@ public class FancyBlackJackApp {
             tempIV.setY(175 - 105);
             dealerCardBackNodes[i] = tempIV;
             root.getChildren().add(dealerCardBackNodes[i]);
-            xPos+=200;
+            xPos+=additionInt;
         }
         PathTransition[] userPathTransitions = new PathTransition[userCardBackNodes.length];
         PathTransition[] dealerPathTransitions = new PathTransition[dealerCardBackNodes.length];
