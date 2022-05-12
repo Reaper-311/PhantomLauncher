@@ -1,9 +1,6 @@
 package com.example.finallauncherrefactored;
 
-import com.example.finallauncherrefactored.Projects.Breakout.BreakoutApp;
-import com.example.finallauncherrefactored.Projects.Snake.SnakeApp;
-import com.example.finallauncherrefactored.Projects.SpaceInvaders.SpaceInvadersApp;
-import com.example.finallauncherrefactored.Utils.ImagePool;
+import com.example.finallauncherrefactored.Projects.BlackJack.FancyBlackJackApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,17 +12,17 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.MalformedInputException;
 import java.util.Objects;
 
-public class MainMenuController {
+public class MainMenuPG2Controller {
+
+    @FXML
+    private Button btn_BlackJack;
 
     @FXML
     private Button btn_Close;
-
-    @FXML
-    private Button btn_Breakout;
 
     @FXML
     private Button btn_Settings;
@@ -34,51 +31,23 @@ public class MainMenuController {
     private Button btn_SignOut;
 
     @FXML
-    private Button btn_Snake;
-
-    @FXML
-    private Button btn_SpaceInvaders;
-
-    @FXML
-    private Button btn_SuperRacer2D;
+    private Button btn_backPage;
 
     @FXML
     private Button btn_nextPage;
 
     @FXML
-    private ImageView imgview_Breakout;
-
-    @FXML
-    private ImageView imgview_Snake;
-
-    @FXML
-    private ImageView imgview_SpaceInvaders;
-
-    @FXML
-    private ImageView imgview_SuperRacer2D;
+    private ImageView imgview_BlackJack;
 
     @FXML
     private ImageView imgview_PFP;
 
     @FXML
-    void btn_handleClose(ActionEvent event) {
-        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
-        Main.resetAppData();
-        window.close();
-    }
-
-    @FXML
-    void btn_handleBreakout(ActionEvent event) {
-        BreakoutApp b = new BreakoutApp();
-        b.start(event);
-    }
-
-    @FXML
-    void btn_handleNextPage(ActionEvent event) {
+    void btn_handleBackPage(ActionEvent event) {
         Main.updatePFP();
         Parent root = null;
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG2.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,6 +59,33 @@ public class MainMenuController {
             window.close();
         });
         window.show();
+    }
+
+    @FXML
+    void btn_handleBlackJack(ActionEvent event) {
+        try {
+            FancyBlackJackApp b = new FancyBlackJackApp();
+            try {
+                b.start(event);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void btn_handleClose(ActionEvent event) {
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        Main.resetAppData();
+        window.close();
+    }
+
+    @FXML
+    void btn_handleNextPage(ActionEvent event) {
+
     }
 
     @FXML
@@ -129,34 +125,5 @@ public class MainMenuController {
         }
     }
 
-    @FXML
-    void btn_handleSnake(ActionEvent event) {
-        SnakeApp snakeApp = new SnakeApp();
-        snakeApp.start(event);
-    }
-
-    @FXML
-    void btn_handleSpaceInvaders(ActionEvent event) {
-        SpaceInvadersApp space = new SpaceInvadersApp();
-        space.start(event);
-    }
-
-    @FXML
-    void btn_handleSuperRacer2D(ActionEvent event) {
-        try {
-            Main main = new Main();
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SuperRacerPreview.fxml")));
-            Scene scene = new Scene(root);
-            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setScene(scene);
-            window.setOnCloseRequest(e -> {
-                main.resetAppData();
-                window.close();
-            });
-            window.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
+

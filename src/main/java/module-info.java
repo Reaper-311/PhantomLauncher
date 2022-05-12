@@ -9,6 +9,7 @@ module com.example.finallauncherrefactored {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.media;
 
     opens com.example.finallauncherrefactored to javafx.fxml;
     exports com.example.finallauncherrefactored;
