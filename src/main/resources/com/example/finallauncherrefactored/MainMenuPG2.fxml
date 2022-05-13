@@ -49,5 +49,15 @@
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
+      <ImageView fx:id="imgview_AVeryRealRPG" fitHeight="95.0" fitWidth="123.0" layoutX="182.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@VeryRealRPGIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_aVeryRealRPG" layoutX="199.0" layoutY="230.0" mnemonicParsing="false" onAction="#btn_handleAVeryRealRPG" text="A Very Real RPG">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

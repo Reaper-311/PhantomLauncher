@@ -1,6 +1,7 @@
 package com.example.finallauncherrefactored;
 
 import com.example.finallauncherrefactored.Projects.BlackJack.FancyBlackJackApp;
+import com.example.finallauncherrefactored.Projects.VeryRealRPG.GameApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,6 +42,30 @@ public class MainMenuPG2Controller {
 
     @FXML
     private ImageView imgview_PFP;
+
+    @FXML
+    private Button btn_aVeryRealRPG;
+
+    @FXML
+    private ImageView imgview_AVeryRealRPG;
+
+    @FXML
+    void btn_handleAVeryRealRPG(ActionEvent event) {
+        try {
+            Main main = new Main();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("VeryRealRPGPreview.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void btn_handleBackPage(ActionEvent event) {

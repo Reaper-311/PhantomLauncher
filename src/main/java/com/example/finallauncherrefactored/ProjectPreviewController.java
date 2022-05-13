@@ -1,6 +1,7 @@
 package com.example.finallauncherrefactored;
 
 import com.example.finallauncherrefactored.Projects.SuperRacer2D.SuperRacerApp;
+import com.example.finallauncherrefactored.Projects.VeryRealRPG.GameApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,14 @@ public class ProjectPreviewController {
 
     @FXML
     private Button btn_SuperRacerPlay;
+    @FXML
+    private Button btn_VeryRealRPGPlay;
+
+    @FXML
+    void btn_handleVeryRealRPGPlay(ActionEvent event) {
+        GameApp app = new GameApp();
+        app.start(event);
+    }
 
     @FXML
     void btn_HandleGoBack(ActionEvent event) {
