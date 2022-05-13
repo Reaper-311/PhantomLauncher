@@ -3,6 +3,7 @@ package com.example.finallauncherrefactored;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.ImageCursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -45,6 +47,7 @@ public class SignInController {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
             Scene scene = new Scene(root);
             Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
             window.setScene(scene);
             window.setOnCloseRequest(e -> {
                 main.resetAppData();
@@ -63,6 +66,7 @@ public class SignInController {
             Scene scene = new Scene(root);
             Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);
+            window.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
             window.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,6 +83,7 @@ public class SignInController {
                 Scene scene = new Scene(root);
                 Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
                 window.setScene(scene);
+                window.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
                 window.setOnCloseRequest(e -> {
                     main.resetAppData();
                     window.close();

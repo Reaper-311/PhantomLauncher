@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -46,6 +48,7 @@ public class Main extends Application {
             FXMLLoader load = new FXMLLoader(getClass().getResource("MainMenuPG1.fxml"));
             Parent root = load.load();
             Scene scene = new Scene(root);
+            stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
             stage.setScene(scene);
             stage.show();
             return;
@@ -58,6 +61,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
         stage.setTitle("Phantom");
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
         stage.setScene(scene);
         stage.show();
     }
