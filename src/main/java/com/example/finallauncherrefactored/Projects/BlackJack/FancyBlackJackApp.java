@@ -30,7 +30,7 @@ import java.util.Objects;
 
 public class FancyBlackJackApp {
     Group root = new Group();
-    BlackJackGame game = new BlackJackGame();
+    BlackJackGame game = new BlackJackGame(new User(Main.getBlackJackCurrency()));
     BlackJackSoundEffects sound = new BlackJackSoundEffects();
 
     ArrayList<ImageView> userCardNodes = new ArrayList<ImageView>();
@@ -58,6 +58,10 @@ public class FancyBlackJackApp {
             }
         });
         stage.setOnCloseRequest(a -> {
+            Main.setBlackJackCurrency(game.user.money);
+            sound.dealCard.stop();
+            sound.flipCard.stop();
+            sound.bridgeCards.stop();
             try {
                 Main main = new Main();
                 Parent root = FXMLLoader.load(Objects.requireNonNull(main.getClass().getResource("MainMenuPG1.fxml")));
@@ -66,9 +70,6 @@ public class FancyBlackJackApp {
                 window.setScene(scene2);
                 window.setOnCloseRequest(e -> {
                     Main.resetAppData();
-                    sound.dealCard.stop();
-                    sound.flipCard.stop();
-                    sound.bridgeCards.stop();
                     window.close();
                 });
                 window.show();

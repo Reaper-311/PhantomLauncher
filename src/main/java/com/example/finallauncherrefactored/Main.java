@@ -245,6 +245,82 @@ public class Main extends Application {
     }
 
     /**
+     * Method that gathers the user's current money status from BlackJack.
+     */
+    public static int getBlackJackCurrency() {
+        String name = getUserName();
+        File userFile = new File(userPath + "/Accounts/" + encrypt(name) + ".txt");
+        ArrayList<String> ar = new ArrayList<>();
+        try {
+            Scanner scan = new Scanner(userFile);
+            while (scan.hasNextLine()) {
+                ar.add(scan.nextLine());
+            }
+            scan.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        for (String s : ar) {
+            String[] split = s.split(":");
+            if (split[0].contains(encrypt("BlackJack"))) {
+                return Integer.parseInt(split[1]);
+            }
+        }
+        return -69;
+    }
+
+    public static int getBlackJackCurrency(String name) {
+        File userFile = new File(userPath + "/Accounts/" + encrypt(name) + ".txt");
+        ArrayList<String> ar = new ArrayList<>();
+        try {
+            Scanner scan = new Scanner(userFile);
+            while (scan.hasNextLine()) {
+                ar.add(scan.nextLine());
+            }
+            scan.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        for (String s : ar) {
+            String[] split = s.split(":");
+            if (split[0].contains(encrypt("BlackJack"))) {
+                return Integer.parseInt(split[1]);
+            }
+        }
+        return -69;
+    }
+
+    public static void setBlackJackCurrency(int money){
+        String name = getUserName();
+        File userFile = new File(userPath + "/Accounts/" + encrypt(name) + ".txt");
+        ArrayList<String> ar = new ArrayList<>();
+        try {
+            Scanner scan = new Scanner(userFile);
+            while (scan.hasNextLine()) {
+                ar.add(scan.nextLine());
+            }
+            scan.close();
+            for (int i = 0; i < ar.size(); i++) {
+                String[] split = ar.get(i).split(":");
+                if (split[0].contains(encrypt("BlackJack"))) {
+                    split[1] = String.valueOf(money);
+                    String comb = split[0] + ":" + split[1];
+                    ar.set(i, comb);
+                    break;
+                }
+            }
+
+            PrintStream ps = new PrintStream(userFile);
+            for (String s : ar) {
+                ps.println(s);
+            }
+            ps.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Method that intakes nothing. It is called on sign out
      * to clean up the AppData.txt file for all persistence
      * data to ensure a clean reset.
@@ -341,7 +417,8 @@ public class Main extends Application {
         try {
             PrintStream ps = new PrintStream(newFile);
             ps.println(encrypt(password));
-            ps.println(encrypt("PFP:" + encrypt("null")));
+            ps.println(encrypt("PFP" + ":" + encrypt("null")));
+            ps.println(encrypt("BlackJack") + ":" + "0");
             //Add other required to be saved data to user file
 
             ps.close();
