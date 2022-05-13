@@ -249,7 +249,7 @@ public class Main extends Application {
      */
     public static int getBlackJackCurrency() {
         String name = getUserName();
-        if(name.contains("GUEST")){
+        if(name.equals("GUEST")){
             return 0;
         }
         File userFile = new File(userPath + "/Accounts/" + encrypt(name) + ".txt");
@@ -274,6 +274,9 @@ public class Main extends Application {
 
     public static int getBlackJackCurrency(String name) {
         File userFile = new File(userPath + "/Accounts/" + encrypt(name) + ".txt");
+        if(name.equals("GUEST")){
+            return 0;
+        }
         ArrayList<String> ar = new ArrayList<>();
         try {
             Scanner scan = new Scanner(userFile);
