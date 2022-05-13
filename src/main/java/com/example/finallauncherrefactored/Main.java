@@ -249,6 +249,9 @@ public class Main extends Application {
      */
     public static int getBlackJackCurrency() {
         String name = getUserName();
+        if(name.contains("GUEST")){
+            return 0;
+        }
         File userFile = new File(userPath + "/Accounts/" + encrypt(name) + ".txt");
         ArrayList<String> ar = new ArrayList<>();
         try {

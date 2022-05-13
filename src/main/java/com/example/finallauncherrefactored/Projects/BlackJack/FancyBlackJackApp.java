@@ -58,7 +58,9 @@ public class FancyBlackJackApp {
             }
         });
         stage.setOnCloseRequest(a -> {
-            Main.setBlackJackCurrency(game.user.money);
+            if(!Main.getUserName().contains("GUEST")){
+                Main.setBlackJackCurrency(game.user.money);
+            }
             sound.dealCard.stop();
             sound.flipCard.stop();
             sound.bridgeCards.stop();
