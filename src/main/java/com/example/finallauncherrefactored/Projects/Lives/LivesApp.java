@@ -4,6 +4,9 @@ import com.example.finallauncherrefactored.Main;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -15,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class LivesApp
@@ -64,6 +68,22 @@ public class LivesApp
         scene.setOnMouseClicked(this::handleMouse2);
         skin = Skin.DEFAULT;
         stage.setScene(scene);
+        stage.setOnCloseRequest(a -> {
+            try {
+                Main main = new Main();
+                Parent root = FXMLLoader.load(Objects.requireNonNull(main.getClass().getResource("MainMenuPG3.fxml")));
+                Scene scene2 = new Scene(root);
+                Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+                window.setScene(scene2);
+                window.setOnCloseRequest(e -> {
+                    Main.resetAppData();
+                    window.close();
+                });
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         stage.setTitle("9 Lives");
         stage.show();
 

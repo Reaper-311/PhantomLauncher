@@ -5,7 +5,10 @@ import com.example.finallauncherrefactored.Projects.ArmWrestling.ArmWrestlingApp
 import com.example.finallauncherrefactored.Projects.BlackJack.BlackJackGame;
 import com.example.finallauncherrefactored.Projects.BlackJack.FancyBlackJackApp;
 import com.example.finallauncherrefactored.Projects.BlockFight.FIGHT;
+import com.example.finallauncherrefactored.Projects.CoreyChase.TileMoverApp;
+import com.example.finallauncherrefactored.Projects.HungerGames.StoryApp;
 import com.example.finallauncherrefactored.Projects.JJPaint.MsPaint;
+import com.example.finallauncherrefactored.Projects.Lives.LivesApp;
 import com.example.finallauncherrefactored.Projects.MP3Player.MP3app;
 import com.example.finallauncherrefactored.Projects.MonstersInc.MontersIncApp;
 import com.example.finallauncherrefactored.Projects.MuderEscape.MurderGameApp;
@@ -74,6 +77,33 @@ public class ProjectPreviewController {
 
     @FXML
     private Button btn_TikTakToe;
+
+    @FXML
+    private Button btn_9Lives;
+
+    @FXML
+    private Button btn_HungerGames;
+
+    @FXML
+    private Button btn_CoreyChase;
+
+    @FXML
+    void btn_handleCoreyChase(ActionEvent event) {
+        TileMoverApp app = new TileMoverApp();
+        app.start(event);
+    }
+
+    @FXML
+    void btn_handleHungerGames(ActionEvent event) {
+        StoryApp app = new StoryApp();
+        app.start(event);
+    }
+
+    @FXML
+    void btn_handle9Lives(ActionEvent event) {
+        LivesApp app = new LivesApp();
+        app.start(event);
+    }
 
     @FXML
     void btn_handleTikTakToe(ActionEvent event) {
@@ -171,6 +201,74 @@ public class ProjectPreviewController {
         try {
             Main main = new Main();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void btn_HandleGoBackPage2(ActionEvent event) {
+        try {
+            Main main = new Main();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG2.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void btn_HandleGoBackPage3(ActionEvent event) {
+        try {
+            Main main = new Main();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG3.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void btn_HandleGoBackPage4(ActionEvent event) {
+        try {
+            Main main = new Main();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG4.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void btn_HandleGoBackPage5(ActionEvent event) {
+        try {
+            Main main = new Main();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG5.fxml")));
             Scene scene = new Scene(root);
             Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);

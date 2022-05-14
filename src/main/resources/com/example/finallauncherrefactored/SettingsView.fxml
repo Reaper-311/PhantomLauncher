@@ -12,11 +12,6 @@
             <Font name="DIN Condensed Bold" size="76.0" />
          </font>
       </Label>
-      <Button fx:id="btn_UploadPicture" layoutX="11.0" layoutY="173.0" mnemonicParsing="false" onAction="#btn_handleUploadPicture" text="Upload Profile Picture">
-         <font>
-            <Font name="DIN Condensed Bold" size="14.0" />
-         </font>
-      </Button>
       <Button fx:id="btn_Confirm" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#btn_handleConfirm" text="Confirm">
          <font>
             <Font name="DIN Condensed Bold" size="14.0" />

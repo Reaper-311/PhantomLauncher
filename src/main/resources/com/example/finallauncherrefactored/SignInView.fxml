@@ -21,8 +21,8 @@
             <Font name="DIN Condensed Bold" size="25.0" />
          </font></Label>
       <Label layoutX="59.0" layoutY="113.0" text="Created by: Jacob Johnson &amp; Gabriel Lopez" />
-      <TextField fx:id="tField_Username" layoutX="221.0" layoutY="217.0" promptText="Enter Username" />
-      <PasswordField fx:id="pField_Password" layoutX="221.0" layoutY="262.0" promptText="Enter Password" />
+      <TextField fx:id="tField_Username" layoutX="221.0" layoutY="217.0" onKeyPressed="#pField_handleKeyPressed" promptText="Enter Username" />
+      <PasswordField fx:id="pField_Password" layoutX="221.0" layoutY="262.0" onKeyPressed="#pField_handleKeyPressed" promptText="Enter Password" />
       <Button fx:id="btn_Confirm" layoutX="274.0" layoutY="318.0" mnemonicParsing="false" onAction="#onBtnConfirm" text="Confirm">
          <font>
             <Font name="DIN Condensed Bold" size="14.0" />

@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="393.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finallauncherrefactored.SettingsAboutController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="ABOUT">
+      <Label layoutX="10.0" layoutY="-10.0" prefHeight="71.0" prefWidth="126.0" text="ABOUT">
          <font>
             <Font name="DIN Condensed Bold" size="62.0" />
          </font>
@@ -23,9 +22,9 @@
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="98.0" prefHeight="197.0" prefWidth="260.0" text="Logic and Computation final, created by Jacob Johnson and Gabriel Lopez.&#10;First page projects are completed by listed class periods.&#10;Remaining projects are submitted Final Projects by other groups.&#10;All project additions are consented submissions. Minimal changes were done to be added to Phanom.&#10;" wrapText="true">
+      <Label layoutX="14.0" layoutY="54.0" prefHeight="295.0" prefWidth="301.0" text="Logic and Computation final, created by Jacob Johnson and Gabriel Lopez during the 2022 year at Trivium Preparatory Academy.&#10;First page projects are completed by listed 2022 class periods.&#10;Remaining projects are submitted Final Projects by other groups in the 2022 year.&#10;All project additions are consented submissions. Minimal changes were done to be added to Phanom. All credit is attributed based on submissions.&#10;&#10;The entirety of Phantom was created by Jacob Johnson.&#10;&#10;GitHubs:&#10;Jacob: Reaper-311        |    Gabriel: glopez74      | Mr. Haney: erichaney&#10;&#10;Special Thanks to Eric Haney for support in this project." wrapText="true">
          <font>
-            <Font name="DIN Condensed Bold" size="14.0" />
+            <Font name="DIN Condensed Bold" size="13.0" />
          </font>
       </Label>
    </children>

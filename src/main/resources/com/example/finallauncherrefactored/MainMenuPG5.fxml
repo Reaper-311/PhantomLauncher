@@ -36,42 +36,47 @@
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fx:id="imgview_PFP" fitHeight="58.0" fitWidth="75.0" layoutX="220.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CurrentPicture.png" />
-         </image>
-      </ImageView>
       <Button fx:id="btn_backPageForPage5" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPageForPage5" text="&lt;-" />
-      <ImageView fitHeight="104.0" fitWidth="139.0" layoutX="54.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="104.0" fitWidth="139.0" layoutX="29.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MP3PlayerIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="104.0" fitWidth="139.0" layoutX="244.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="104.0" fitWidth="139.0" layoutX="197.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@StoriesIcon.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_MP3Player" layoutX="92.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleMP3Player" text="MP3 Player">
+      <Button fx:id="btn_MP3Player" layoutX="66.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleMP3Player" text="MP3 Player">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btn_Stories" layoutX="277.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleStories" text="Stories">
+      <Button fx:id="btn_Stories" layoutX="230.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleStories" text="Stories">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font>
       </Button>
-      <ImageView fitHeight="104.0" fitWidth="137.0" layoutX="416.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="104.0" fitWidth="137.0" layoutX="320.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@TikTakToeIcon.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_TikTakToe" layoutX="426.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleTikTakToe" text="Super TikTakToe">
+      <Button fx:id="btn_TikTakToe" layoutX="330.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleTikTakToe" text="Super TikTakToe">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font>
       </Button>
       <Label layoutX="548.0" layoutY="344.0" text="5/5" />
+      <ImageView fitHeight="104.0" fitWidth="137.0" layoutX="442.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@HungerGamesIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_HungerGames" layoutX="473.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleHungerGames" text="Hunger Games">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

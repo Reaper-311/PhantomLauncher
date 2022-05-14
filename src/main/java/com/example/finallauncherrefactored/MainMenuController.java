@@ -76,7 +76,6 @@ public class MainMenuController {
 
     @FXML
     void btn_handleNextPage(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG2.fxml")));
@@ -116,8 +115,6 @@ public class MainMenuController {
 
     @FXML
     void btn_handleSignOut(ActionEvent event) {
-        Main main = new Main();
-        main.resetPFP();
         Main.resetAppData();
 
         try {

@@ -33,11 +33,6 @@
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fx:id="imgview_PFP" fitHeight="58.0" fitWidth="75.0" layoutX="220.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CurrentPicture.png" />
-         </image>
-      </ImageView>
       <Button fx:id="btn_backPageForPage3" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPageForPage3" text="&lt;-" />
       <ImageView fx:id="imgview_BlackJack" fitHeight="95.0" fitWidth="95.0" layoutX="56.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -49,9 +44,9 @@
             <Image url="@MonstersIncIcon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="341.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="339.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@CoreyIcon.png" />
+            <Image url="@9LivesIcon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="95.0" fitWidth="123.0" layoutX="462.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">

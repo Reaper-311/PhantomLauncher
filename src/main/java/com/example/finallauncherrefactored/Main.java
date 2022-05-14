@@ -39,7 +39,6 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         }
-        resetPFP();
 
         if (checkPersistence()) {
             currentUser = getPersistenceValue();
@@ -66,31 +65,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    /**
-     * Public static method that updates the MainMenu's PFP to the currently signing in user.
-     */
-    public static void updatePFP() {
 
-    }
-
-    /**
-     * Method for the Main class that resets the "CurrentPicture.png" image to the "DefaultPFP.png"
-     * Resetting this is necessary for how FXML files are loaded - the FXML node is set to a specific path, so modifying
-     * the "CurrentPicture.png" is how to show custom Profile Pictures.
-     * Returns nothing.
-     */
-    public void resetPFP() {
-        File currentpicture = new File(getClass().getResource("CurrentPicture.png").getPath());
-        File defaultpicture = new File(getClass().getResource("DefaultPFP.png").getPath());
-        if (currentpicture.exists()) {
-            currentpicture.delete();
-        }
-        try {
-            Files.copy(defaultpicture.toPath(), currentpicture.toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Private method called on startup.

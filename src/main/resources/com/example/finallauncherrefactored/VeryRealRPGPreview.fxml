@@ -33,7 +33,7 @@
             <Font name="DIN Condensed Bold" size="21.0" />
          </font>
       </Button>
-      <Button fx:id="btn_SuperRacerGoBack" layoutX="304.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_HandleGoBack" prefHeight="27.0" prefWidth="57.0" text="Go Back">
+      <Button fx:id="btn_SuperRacerGoBack" layoutX="304.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_HandleGoBackPage2" prefHeight="27.0" prefWidth="57.0" text="Go Back">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font>

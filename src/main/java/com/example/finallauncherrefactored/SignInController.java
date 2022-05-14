@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -39,6 +41,37 @@ public class SignInController {
 
     @FXML
     private Button btn_Guest;
+
+    @FXML
+    void pField_handleKeyPressed(KeyEvent event) {
+
+        if (event.getCode() != KeyCode.ENTER) {
+            return;
+        }
+
+        if (main.credentialHandshake(tField_Username.getText(), pField_Password.getText())) {
+            try {
+                main.updateAppDataName(tField_Username.getText());
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
+                Scene scene = new Scene(root);
+                Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+                window.setScene(scene);
+                window.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
+                window.setOnCloseRequest(e -> {
+                    main.resetAppData();
+                    window.close();
+                });
+                window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (!main.credentialHandshake(tField_Username.getText(), pField_Password.getText())) {
+            label_Error.setText("Account not found!");
+            return;
+        }
+    }
 
     @FXML
     void btn_OnGuest(ActionEvent event) {
@@ -77,7 +110,6 @@ public class SignInController {
     void onBtnConfirm(ActionEvent event) {
         if (main.credentialHandshake(tField_Username.getText(), pField_Password.getText())) {
             try {
-                Main.updatePFP();
                 main.updateAppDataName(tField_Username.getText());
                 Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
                 Scene scene = new Scene(root);

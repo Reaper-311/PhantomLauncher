@@ -33,11 +33,6 @@
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fx:id="imgview_PFP" fitHeight="58.0" fitWidth="75.0" layoutX="220.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CurrentPicture.png" />
-         </image>
-      </ImageView>
       <Button fx:id="btn_backPageForPage4" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPageForPage4" text="&lt;-" />
       <ImageView fx:id="imgview_BlackJack" fitHeight="95.0" fitWidth="95.0" layoutX="56.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -10,6 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -34,6 +37,36 @@ public class CreateAccountController {
 
     @FXML
     private TextField tField_Username;
+
+    @FXML
+    void pField_handleKeyPressed(KeyEvent event) {
+        if (event.getCode() != KeyCode.ENTER) {
+            return;
+        }
+        String enteredUser = tField_Username.getText();
+        String enteredPass = pField_Password.getText();
+
+        if (main.checkAccountExistence(enteredUser)) {
+            label_Error.setText("Account '" + enteredUser + "' already exists!");
+            return;
+        }
+
+        if (!main.checkAccountExistence(enteredUser)) {
+            main.createAccount(enteredUser, enteredPass);
+        }
+
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignInView.fxml")));
+            Scene scene = new Scene(root);
+
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("phantomlauncher.png")).toExternalForm()));
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Confirmation button handler.

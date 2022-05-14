@@ -33,7 +33,7 @@
             <Font name="DIN Condensed Bold" size="21.0" />
          </font>
       </Button>
-      <Button fx:id="btn_SuperRacerGoBack" layoutX="304.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_HandleGoBack" prefHeight="27.0" prefWidth="57.0" text="Go Back">
+      <Button fx:id="btn_SuperRacerGoBack" layoutX="304.0" layoutY="18.0" mnemonicParsing="false" onAction="#btn_HandleGoBackPage2" prefHeight="27.0" prefWidth="57.0" text="Go Back">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font>
@@ -41,6 +41,11 @@
       <Label layoutX="245.0" layoutY="243.0" prefHeight="213.0" prefWidth="112.0" text="Credits:&#10;&#10;Gabe Lopez - Graphics, Grahpical implementation, Animation, Completion&#10;&#10;Jacob Johnson - Backend structure &amp; implementation" wrapText="true">
          <font>
             <Font name="DIN Condensed Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="277.0" layoutY="63.0" prefHeight="184.0" prefWidth="72.0" text="Note:&#10;&#10;This game is enabled with persistance!&#10;&#10;If you sign in with an account, your balance will be saved." textFill="RED" wrapText="true">
+         <font>
+            <Font size="10.0" />
          </font>
       </Label>
    </children>

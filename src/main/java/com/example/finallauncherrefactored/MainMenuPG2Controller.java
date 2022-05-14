@@ -1,19 +1,5 @@
 package com.example.finallauncherrefactored;
 
-import com.example.finallauncherrefactored.Projects.AirHockey.PongApp;
-import com.example.finallauncherrefactored.Projects.ArmWrestling.ArmWrestlingApp;
-import com.example.finallauncherrefactored.Projects.BlackJack.FancyBlackJackApp;
-import com.example.finallauncherrefactored.Projects.BlockFight.FIGHT;
-import com.example.finallauncherrefactored.Projects.CoreyChase.TileMoverApp;
-import com.example.finallauncherrefactored.Projects.JJPaint.MsPaint;
-import com.example.finallauncherrefactored.Projects.Lives.LivesApp;
-import com.example.finallauncherrefactored.Projects.MP3Player.MP3app;
-import com.example.finallauncherrefactored.Projects.MonstersInc.MontersIncApp;
-import com.example.finallauncherrefactored.Projects.MuderEscape.MurderGameApp;
-import com.example.finallauncherrefactored.Projects.Stories.StoriesApp;
-import com.example.finallauncherrefactored.Projects.TetraShot.GameApp;
-import com.example.finallauncherrefactored.Projects.TikTakToe.App2;
-import com.example.finallauncherrefactored.Projects.Wordle.WordleApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -119,6 +104,26 @@ public class MainMenuPG2Controller {
     private Button btn_TikTakToe;
 
     @FXML
+    private Button btn_HungerGames;
+
+    @FXML
+    void btn_handleHungerGames(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HungerGamesPreview.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                Main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     void btn_handleTikTakToe(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("TikTakToePreview.fxml")));
@@ -172,7 +177,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleBackPageForPage5(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
@@ -191,7 +195,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleNextPageForPage5(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
@@ -278,7 +281,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleBackPageForPage4(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG3.fxml")));
@@ -297,7 +299,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleNextPageForPage4(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG5.fxml")));
@@ -333,8 +334,19 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handle9Lives(ActionEvent event) {
-        LivesApp app = new LivesApp();
-        app.start(event);
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("9LivesPreview.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                Main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -357,7 +369,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleBackPageForPage3(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG2.fxml")));
@@ -379,7 +390,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleNextPageForPage3(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG4.fxml")));
@@ -450,7 +460,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleBackPage(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
@@ -494,7 +503,6 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleNextPage(ActionEvent event) {
-        Main.updatePFP();
         Parent root = null;
         try {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG3.fxml")));
@@ -533,7 +541,6 @@ public class MainMenuPG2Controller {
     @FXML
     void btn_handleSignOut(ActionEvent event) {
         Main main = new Main();
-        main.resetPFP();
         Main.resetAppData();
 
         try {
@@ -550,8 +557,19 @@ public class MainMenuPG2Controller {
 
     @FXML
     void btn_handleCoreyChase(ActionEvent event) {
-        TileMoverApp app = new TileMoverApp();
-        app.start(event);
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CoreyChasePreview.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                Main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

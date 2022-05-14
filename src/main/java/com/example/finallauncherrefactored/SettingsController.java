@@ -174,71 +174,7 @@ public class SettingsController {
 
     }
 
-    @FXML
-    void btn_handleUploadPicture(ActionEvent event) {
-        if (Main.getUserName().contains("GUEST")) {
-            label_PFPStatus.setText("Error: Guest Account");
-            return;
-        }
 
-        FileChooser fc = new FileChooser();
-        File list = fc.showOpenDialog(((Node)event.getSource()).getScene().getWindow());
-        if (list != null) {
-            String name = list.getName();
-            String[] check = name.split("\\.");
-            if(check[1].contains("png")) {
-                System.out.println("Added: " + list.getName());
-
-
-                File ufile = new File(Main.userPath + "/Accounts/" + Main.encrypt(Main.getUserName()) + ".txt");
-                File destfile = new File(Main.userPath + "/Images/" + Main.encrypt(Main.getUserName()) + ".png");
-                if (destfile.exists()) {
-                    destfile.delete();
-                    System.out.println("Debug: Removing existings PFP!");
-                }
-                try {
-                    Files.copy(list.toPath(), destfile.toPath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                label_PFPStatus.setText("Set Picture to " + list.getName() + "!");
-
-                try {
-                    ArrayList<String> uContents = new ArrayList<>();
-                    Scanner uscan = new Scanner(ufile);
-                    while (uscan.hasNextLine()) {
-                        uContents.add(uscan.nextLine());
-                    }
-                    uscan.close();
-                    for (int i = 0; i < uContents.size(); i++) {
-                        String[] split = uContents.get(i).split(":");
-                        if (split[0].contains(Objects.requireNonNull(Main.encrypt("PFP")))) {
-                            split[1] = Main.encrypt(Main.getUserName()) + ".png";
-                            String comb = split[0] + ":" + split[1];
-                            uContents.set(i, comb);
-                            break;
-                        }
-                    }
-
-                    PrintStream ps = new PrintStream(ufile);
-                    for (String s : uContents) {
-                        ps.println(s);
-                    }
-                    ps.close();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-
-                File currentphoto = new File(getClass().getResource("CurrentPicture.png").getPath());
-
-                try {
-                    Files.copy(list.toPath(), currentphoto.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
 }
 
