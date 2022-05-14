@@ -1,6 +1,7 @@
 package com.example.finallauncherrefactored;
 
 import com.example.finallauncherrefactored.Projects.BlackJack.FancyBlackJackApp;
+import com.example.finallauncherrefactored.Projects.CoreyChase.TileMoverApp;
 import com.example.finallauncherrefactored.Projects.VeryRealRPG.GameApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +20,8 @@ import java.util.Objects;
 
 public class MainMenuPG2Controller {
 
+    @FXML
+    private Button btn_CoreyChase;
     @FXML
     private Button btn_BlackJack;
 
@@ -148,6 +151,12 @@ public class MainMenuPG2Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void btn_handleCoreyChase(ActionEvent event) {
+        TileMoverApp app = new TileMoverApp();
+        app.start(event);
     }
 
 }

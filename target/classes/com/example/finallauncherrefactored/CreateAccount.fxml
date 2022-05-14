@@ -4,26 +4,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finallauncherrefactored.CreateAccountController">
    <children>
-      <Label layoutX="25.0" layoutY="28.0" text="Final Launcher: Account Creation">
+      <Label layoutX="42.0" layoutY="49.0" text="Phantom: Account Creation">
          <font>
             <Font name="DIN Condensed Bold" size="41.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="137.0" prefHeight="19.0" prefWidth="258.0" text="Enter your new Username and Password!">
+      <Label layoutX="42.0" layoutY="123.0" prefHeight="26.0" prefWidth="315.0" text="Enter your new Username and Password!">
          <font>
-            <Font name="Apple SD Gothic Neo Regular" size="14.0" />
+            <Font name="DIN Condensed Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="tField_Username" layoutX="54.0" layoutY="167.0" promptText="Enter new Username!" />
-      <Label layoutX="401.0" layoutY="140.0" prefHeight="201.0" prefWidth="173.0" text="Security Note:&#10;&#10;All entered user data is encrypted when stored on this computer.&#10;&#10;This data cannot be accessed by other users, applications, or developers once created." textFill="RED" wrapText="true" />
-      <Button fx:id="btn_Confirm" layoutX="214.0" layoutY="269.0" mnemonicParsing="false" onAction="#btn_OnConfirm" text="Confirm" />
-      <Button fx:id="btn_GoBack" layoutX="312.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn_OnGoBack" text="Go Back" />
-      <PasswordField fx:id="pField_Password" layoutX="54.0" layoutY="216.0" promptText="Enter new Password!" />
-      <Label fx:id="label_Error" layoutX="227.0" layoutY="172.0" prefHeight="53.0" prefWidth="160.0" textFill="RED" wrapText="true" />
+      <TextField fx:id="tField_Username" layoutX="42.0" layoutY="174.0" promptText="Enter new Username!" />
+      <Label layoutX="471.0" layoutY="134.0" prefHeight="201.0" prefWidth="83.0" text="Security Note:&#10;&#10;All entered user data is encrypted when stored on this computer.&#10;&#10;This data cannot be accessed by other users, applications, or developers once created." textFill="RED" wrapText="true">
+         <font>
+            <Font name="DIN Condensed Bold" size="11.0" />
+         </font></Label>
+      <Button fx:id="btn_Confirm" layoutX="42.0" layoutY="282.0" mnemonicParsing="false" onAction="#btn_OnConfirm" text="Confirm">
+         <font>
+            <Font name="DIN Condensed Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="btn_GoBack" layoutX="135.0" layoutY="282.0" mnemonicParsing="false" onAction="#btn_OnGoBack" text="Go Back">
+         <font>
+            <Font name="DIN Condensed Bold" size="17.0" />
+         </font></Button>
+      <PasswordField fx:id="pField_Password" layoutX="42.0" layoutY="221.0" promptText="Enter new Password!" />
+      <Label fx:id="label_Error" layoutX="260.0" layoutY="208.0" prefHeight="53.0" prefWidth="160.0" textFill="RED" wrapText="true" />
+      <ImageView fitHeight="86.0" fitWidth="83.0" layoutX="471.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@phantomlauncher.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
