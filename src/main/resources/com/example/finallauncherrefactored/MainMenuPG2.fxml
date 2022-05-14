@@ -22,7 +22,7 @@
          <font>
             <Font name="DIN Condensed Bold" size="14.0" />
          </font></Button>
-      <Label layoutX="210.0" layoutY="79.0" prefHeight="36.0" prefWidth="180.0" text="Class Demo Projects">
+      <Label layoutX="210.0" layoutY="79.0" prefHeight="36.0" prefWidth="210.0" text="Student Submissions">
          <font>
             <Font name="DIN Condensed Bold" size="28.0" />
          </font>
@@ -39,31 +39,45 @@
          </image>
       </ImageView>
       <Button fx:id="btn_backPage" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPage" text="&lt;-" />
-      <ImageView fx:id="imgview_BlackJack" fitHeight="95.0" fitWidth="95.0" layoutX="56.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgview_BlackJack" fitHeight="95.0" fitWidth="95.0" layoutX="57.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BlackJackIcon.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btn_BlackJack" layoutX="72.0" layoutY="230.0" mnemonicParsing="false" onAction="#btn_handleBlackJack" text="BlackJack">
+      <Button fx:id="btn_BlackJack" layoutX="72.0" layoutY="257.0" mnemonicParsing="false" onAction="#btn_handleBlackJack" text="BlackJack">
          <font>
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fx:id="imgview_AVeryRealRPG" fitHeight="95.0" fitWidth="123.0" layoutX="182.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgview_AVeryRealRPG" fitHeight="95.0" fitWidth="123.0" layoutX="182.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@VeryRealRPGIcon.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_aVeryRealRPG" layoutX="199.0" layoutY="230.0" mnemonicParsing="false" onAction="#btn_handleAVeryRealRPG" text="A Very Real RPG">
+      <Button fx:id="btn_aVeryRealRPG" layoutX="199.0" layoutY="257.0" mnemonicParsing="false" onAction="#btn_handleAVeryRealRPG" text="A Very Real RPG">
          <font>
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_CoreyChase" layoutX="339.0" layoutY="231.0" mnemonicParsing="false" onAction="#btn_handleCoreyChase" text="Corey Chase" />
-      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="341.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="btn_CoreyChase" layoutX="349.0" layoutY="257.0" mnemonicParsing="false" onAction="#btn_handleCoreyChase" text="Corey Chase">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font></Button>
+      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="341.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@CoreyIcon.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="123.0" layoutX="469.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ArmWrestlingIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_ArmWrestling" layoutX="484.0" layoutY="257.0" mnemonicParsing="false" onAction="#btn_handleArmWrestling" text="Arm Wrestling">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="527.0" layoutY="344.0" text="2/5" />
    </children>
 </AnchorPane>

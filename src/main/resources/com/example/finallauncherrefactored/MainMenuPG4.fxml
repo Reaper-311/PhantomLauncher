@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finallauncherrefactored.MainMenuPG2Controller">
+   <children>
+      <Label layoutX="14.0" prefHeight="57.0" prefWidth="200.0" text="Welcome!">
+         <font>
+            <Font name="DIN Condensed Bold" size="60.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_SignOut" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleSignOut" text="Sign Out">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn_Settings" layoutX="398.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleSettings" text="Settings">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="210.0" layoutY="79.0" prefHeight="36.0" prefWidth="200.0" text="Student Submissions">
+         <font>
+            <Font name="DIN Condensed Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_nextPageForPage4" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleNextPageForPage4" text="-&gt;" />
+      <Button fx:id="btn_Close" layoutX="536.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleClose" text="Close">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgview_PFP" fitHeight="58.0" fitWidth="75.0" layoutX="220.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@CurrentPicture.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_backPageForPage4" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPageForPage4" text="&lt;-" />
+      <ImageView fx:id="imgview_BlackJack" fitHeight="95.0" fitWidth="95.0" layoutX="56.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@AirHockeyIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgview_AVeryRealRPG" fitHeight="95.0" fitWidth="123.0" layoutX="195.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MonstersIncIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="339.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@TetraShotIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="123.0" layoutX="451.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MuderEscapeIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_AirHockey" layoutX="73.0" layoutY="241.0" mnemonicParsing="false" onAction="#btn_handleAirHockey" text="Air Hockey">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_BlockFight" layoutX="212.0" layoutY="241.0" mnemonicParsing="false" onAction="#btn_handleBlockFight" text="Block Fight">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_TetraShot" layoutX="355.0" layoutY="241.0" mnemonicParsing="false" onAction="#btn_handleTetraShot" text="TetraShot">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_MurderEscape" layoutX="474.0" layoutY="241.0" mnemonicParsing="false" onAction="#btn_handleMurderEscape" text="Murder Escape">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="526.0" layoutY="344.0" text="4/5" />
+   </children>
+</AnchorPane>

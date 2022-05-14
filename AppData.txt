@@ -1,3 +1,1 @@
 StaySignedIn:false
-name:GUEST
-name:GUEST

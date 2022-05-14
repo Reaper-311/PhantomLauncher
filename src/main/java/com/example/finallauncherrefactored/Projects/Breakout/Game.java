@@ -9,7 +9,7 @@ package com.example.finallauncherrefactored.Projects.Breakout;
  *
  * This class also reports sound effects cues to the main application.
  */
-class Game
+class BGame
 {
     /** Basic game data */
     int lives, score, level, combo, bestCombo;
@@ -26,7 +26,7 @@ class Game
     /**
      * The game constructor.
      */
-    Game()
+    BGame()
     {
         lives = 3;
         score = 0;

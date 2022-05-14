@@ -66,7 +66,7 @@ public class FancyBlackJackApp {
             sound.bridgeCards.stop();
             try {
                 Main main = new Main();
-                Parent root = FXMLLoader.load(Objects.requireNonNull(main.getClass().getResource("MainMenuPG1.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(main.getClass().getResource("MainMenuPG2.fxml")));
                 Scene scene2 = new Scene(root);
                 Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
                 window.setScene(scene2);

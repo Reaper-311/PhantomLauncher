@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class TileMoverApp
 {
-    Game game;
+    CGame game;
     GraphicsContext gc;
     Animation animation;
     Image gameOverImg = new Image(Objects.requireNonNull(Main.class.getResourceAsStream("CoreyChase/gameover.png")));
@@ -32,7 +32,7 @@ public class TileMoverApp
     public void start(ActionEvent event)
     {
         Stage stage = new Stage();
-        game = new Game();
+        game = new CGame();
 
         Canvas canvas = new Canvas(game.width * GRIDSIZE, game.height * GRIDSIZE);
         gc = canvas.getGraphicsContext2D();
@@ -48,7 +48,7 @@ public class TileMoverApp
         stage.setOnCloseRequest(a -> {
             try {
                 Main main = new Main();
-                Parent root = FXMLLoader.load(Objects.requireNonNull(main.getClass().getResource("MainMenuPG1.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(main.getClass().getResource("MainMenuPG2.fxml")));
                 Scene scene2 = new Scene(root);
                 Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
                 window.setScene(scene2);
@@ -87,7 +87,7 @@ public class TileMoverApp
         }
         else if (key == KeyCode.R)
         {
-            game = new Game();
+            game = new CGame();
         }
     }
 

@@ -10,6 +10,8 @@ module com.example.finallauncherrefactored {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires javafx.media;
+    requires java.desktop;
+    requires javafx.swing;
 
     opens com.example.finallauncherrefactored to javafx.fxml;
     exports com.example.finallauncherrefactored;

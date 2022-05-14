@@ -23,7 +23,7 @@ import java.util.Objects;
 
 public class BreakoutApp
 {
-    Game game;
+    BGame game;
     GraphicsContext gc;
     Animation animation;
 
@@ -32,7 +32,7 @@ public class BreakoutApp
     public void start(ActionEvent event)
     {
         Stage stage = new Stage();
-        game = new Game();
+        game = new BGame();
 
         Canvas canvas = new Canvas(game.width, game.height);
         gc = canvas.getGraphicsContext2D();
@@ -93,7 +93,7 @@ public class BreakoutApp
         }
         else if (key == KeyCode.R)
         {
-            game = new Game();
+            game = new BGame();
         }
         else if (key == KeyCode.A)
         {

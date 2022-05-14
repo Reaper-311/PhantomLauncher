@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finallauncherrefactored.MainMenuPG2Controller">
+   <children>
+      <Label layoutX="14.0" prefHeight="57.0" prefWidth="200.0" text="Welcome!">
+         <font>
+            <Font name="DIN Condensed Bold" size="60.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_SignOut" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleSignOut" text="Sign Out">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn_Settings" layoutX="398.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleSettings" text="Settings">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="210.0" layoutY="79.0" prefHeight="36.0" prefWidth="200.0" text="Student Submissions">
+         <font>
+            <Font name="DIN Condensed Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_nextPageForPage5" layoutX="492.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleNextPageForPage5" text="Back to first page">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btn_Close" layoutX="536.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleClose" text="Close">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imgview_PFP" fitHeight="58.0" fitWidth="75.0" layoutX="220.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@CurrentPicture.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_backPageForPage5" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPageForPage5" text="&lt;-" />
+      <ImageView fitHeight="104.0" fitWidth="139.0" layoutX="54.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MP3PlayerIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="104.0" fitWidth="139.0" layoutX="244.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@StoriesIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_MP3Player" layoutX="92.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleMP3Player" text="MP3 Player">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_Stories" layoutX="277.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleStories" text="Stories">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="104.0" fitWidth="137.0" layoutX="416.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@TikTakToeIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_TikTakToe" layoutX="426.0" layoutY="255.0" mnemonicParsing="false" onAction="#btn_handleTikTakToe" text="Super TikTakToe">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="548.0" layoutY="344.0" text="5/5" />
+   </children>
+</AnchorPane>
