@@ -2,6 +2,7 @@ package com.example.finallauncherrefactored;
 
 import com.example.finallauncherrefactored.Projects.AirHockey.PongApp;
 import com.example.finallauncherrefactored.Projects.ArmWrestling.ArmWrestlingApp;
+import com.example.finallauncherrefactored.Projects.ArsonDiner.Game;
 import com.example.finallauncherrefactored.Projects.BlackJack.BlackJackGame;
 import com.example.finallauncherrefactored.Projects.BlackJack.FancyBlackJackApp;
 import com.example.finallauncherrefactored.Projects.BlockFight.FIGHT;
@@ -83,6 +84,15 @@ public class ProjectPreviewController {
 
     @FXML
     private Button btn_HungerGames;
+
+    @FXML
+    private Button btn_ArsonDiner;
+
+    @FXML
+    void btn_handleArsonDiner(ActionEvent event) {
+        Game app = new Game();
+        app.start(event);
+    }
 
     @FXML
     private Button btn_CoreyChase;
@@ -269,6 +279,25 @@ public class ProjectPreviewController {
         try {
             Main main = new Main();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG5.fxml")));
+            Scene scene = new Scene(root);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.setOnCloseRequest(e -> {
+                main.resetAppData();
+                window.close();
+            });
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    void btn_HandleGoBackPage6(ActionEvent event) {
+        try {
+            Main main = new Main();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG6.fxml")));
             Scene scene = new Scene(root);
             Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);

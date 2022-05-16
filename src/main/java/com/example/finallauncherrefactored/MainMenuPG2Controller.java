@@ -1,5 +1,6 @@
 package com.example.finallauncherrefactored;
 
+import com.example.finallauncherrefactored.Projects.ArsonDiner.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -107,6 +108,59 @@ public class MainMenuPG2Controller {
     private Button btn_HungerGames;
 
     @FXML
+    private Button btn_ArsonDiner;
+
+
+    @FXML
+    private Button btn_backPageForPage6;
+
+    @FXML
+    private Button btn_nextPageForPage6;
+
+    @FXML
+    void btn_handleBackPageForPage6(ActionEvent event) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG5.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.setOnCloseRequest(e -> {
+            Main.resetAppData();
+            window.close();
+        });
+        window.show();
+    }
+
+    @FXML
+    void btn_handleNextPageForPage6(ActionEvent event) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.setOnCloseRequest(e -> {
+            Main.resetAppData();
+            window.close();
+        });
+        window.show();
+    }
+
+
+    @FXML
+    void btn_handleArsonDiner(ActionEvent event) {
+        Game game = new Game();
+        game.start(event);
+    }
+
+    @FXML
     void btn_handleHungerGames(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HungerGamesPreview.fxml")));
@@ -179,7 +233,7 @@ public class MainMenuPG2Controller {
     void btn_handleBackPageForPage5(ActionEvent event) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG4.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -197,7 +251,7 @@ public class MainMenuPG2Controller {
     void btn_handleNextPageForPage5(ActionEvent event) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG1.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainMenuPG6.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }

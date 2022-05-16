@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finallauncherrefactored.MainMenuPG2Controller">
+   <children>
+      <Label layoutX="14.0" prefHeight="57.0" prefWidth="200.0" text="Welcome!">
+         <font>
+            <Font name="DIN Condensed Bold" size="60.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_SignOut" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleSignOut" text="Sign Out">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btn_Settings" layoutX="398.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleSettings" text="Settings">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="210.0" layoutY="79.0" prefHeight="36.0" prefWidth="200.0" text="Student Submissions">
+         <font>
+            <Font name="DIN Condensed Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_nextPageForPage6" layoutX="492.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleNextPageForPage6" text="Back to first page">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btn_Close" layoutX="536.0" layoutY="14.0" mnemonicParsing="false" onAction="#btn_handleClose" text="Close">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_backPageForPage6" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleBackPageForPage6" text="&lt;-" />
+      <Label layoutX="548.0" layoutY="344.0" text="6/6" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="230.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ArsonDinerIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_ArsonDiner" layoutX="275.0" layoutY="282.0" mnemonicParsing="false" onAction="#btn_handleArsonDiner" text="Arson Diner">
+         <font>
+            <Font name="DIN Condensed Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

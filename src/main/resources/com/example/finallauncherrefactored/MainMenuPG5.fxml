@@ -27,7 +27,7 @@
             <Font name="DIN Condensed Bold" size="28.0" />
          </font>
       </Label>
-      <Button fx:id="btn_nextPageForPage5" layoutX="492.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleNextPageForPage5" text="Back to first page">
+      <Button fx:id="btn_nextPageForPage5" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#btn_handleNextPageForPage5" text="-&gt;">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font></Button>
@@ -67,7 +67,7 @@
             <Font name="DIN Condensed Bold" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="548.0" layoutY="344.0" text="5/5" />
+      <Label layoutX="526.0" layoutY="344.0" text="5/6" />
       <ImageView fitHeight="104.0" fitWidth="137.0" layoutX="442.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@HungerGamesIcon.png" />

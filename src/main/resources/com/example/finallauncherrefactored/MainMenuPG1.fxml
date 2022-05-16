@@ -69,6 +69,6 @@
             <Font name="DIN Condensed Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="528.0" layoutY="344.0" text="1/5" />
+      <Label layoutX="528.0" layoutY="344.0" text="1/6" />
    </children>
 </AnchorPane>

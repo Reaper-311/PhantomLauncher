@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.embed.swing.SwingFXUtils;
+//import javafx.embed.swing.SwingFXUtils;
 
 
 import javax.imageio.ImageIO;
@@ -253,7 +253,7 @@ public class MsPaint
         {
             canvas.snapshot(null, wim);
             try {
-                ImageIO.write(SwingFXUtils.fromFXImage(wim, null), "png", file);
+              //  ImageIO.write(SwingFXUtils.fromFXImage(wim, null), "png", file);
             } catch (Exception s) {
             }
 
